@@ -3,9 +3,8 @@ import CartCard from "./cartCard";
 export default function CartContainer({
     cart,
     handleRemoveFromCart,
-    handleAddProductQuantity,
-    handleRemoveProductQuantity,
-    productQuantity,
+    handleAddCartQuantity,
+    handleRemoveCartQuantity,
     setCart,
 }){
 
@@ -21,9 +20,8 @@ export default function CartContainer({
     return <div className="CartContainer">
         {cart.map((item) => <CartCard key={item.id} {...item}
         handleRemoveFromCart={handleRemoveFromCart}
-        handleAddProductQuantity={handleAddProductQuantity}
-        handleRemoveProductQuantity={handleRemoveProductQuantity}
-        productQuantity={productQuantity}
+        handleAddCartQuantity={handleAddCartQuantity}
+        handleRemoveCartQuantity={handleRemoveCartQuantity}
         />)}
         <button className="RemoveButton" onClick={() => setCart([])}>Empty Cart</button>
         <button className="BuyButton">Purchase: ${totalPrice}</button>

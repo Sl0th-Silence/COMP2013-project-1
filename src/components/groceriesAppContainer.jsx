@@ -39,6 +39,7 @@ export default function GroceriesAppContainer({
         setProductQuantity(newProductQuantity)
         return
     }
+
     //Now we add to the cart. What fun >___<
     //My brain hurts
     //New state for cart
@@ -68,6 +69,28 @@ export default function GroceriesAppContainer({
         setCart(filteredCart);
     }
 
+            //Function to set the up and down of each number in cart
+    const handleAddCartQuantity = (productID) => {
+        const newCartQuantity = cart.map((prod) => {
+            if(prod.id === productID){
+                return{...prod, prodQuantity: prod.prodQuantity + 1}
+            }
+            return prod
+        });
+        setCart(newCartQuantity)
+        return
+    }
+    
+    const handleRemoveCartQuantity = (productID) => {
+        const newCartQuantity = cart.map((prod) => {
+            if(prod.id === productID && prod.prodQuantity > 1){
+                return{...prod, prodQuantity: prod.prodQuantity - 1}
+            }
+            return prod
+        });
+        setCart(newCartQuantity)
+        return
+    }
     
     //Handle remove all from cart
     //Just go direct inside of the button I guess?
@@ -84,8 +107,8 @@ export default function GroceriesAppContainer({
         />
         <CartContainer productQuantity={productQuantity} products={products} 
         cart={cart} handleRemoveFromCart={handleRemoveFromCart}
-        handleAddProductQuantity={handleAddProductQuantity}
-        handleRemoveProductQuantity={handleRemoveProductQuantity}
+        handleAddCartQuantity={handleAddCartQuantity}
+        handleRemoveCartQuantity={handleRemoveCartQuantity}
         setCart={setCart}
         />
 

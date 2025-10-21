@@ -11,7 +11,6 @@ export default function ProductCard({
     handleAddToCart,
     id,
     productQuantity,
-    cart
 }){
 
     //Now we need to get the individual product quantity.

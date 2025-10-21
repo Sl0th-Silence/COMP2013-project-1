@@ -6,7 +6,6 @@ export default function ProductContainer({
     handleRemoveProductQuantity,
     handleAddToCart,
     productQuantity,
-    cart,
 }){
     return <div className="ProductsContainer">
         {
@@ -18,7 +17,6 @@ export default function ProductContainer({
                 handleRemoveProductQuantity={handleRemoveProductQuantity}
                 handleAddToCart={handleAddToCart}
                 productQuantity={productQuantity}
-                cart={cart}
                 />
                 
             })
