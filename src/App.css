@@ -60,7 +60,7 @@
 
 .CartCard {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   /* flex-wrap: wrap; */
@@ -107,7 +107,7 @@
   width: 25px;
   height: 25px;
   border: 1px solid white;
-  border-radius: 50%;
+  border-radius: 20%;
   cursor: pointer;
   margin: 0 5px;
 }
@@ -147,7 +147,7 @@ img {
   background-color: rgb(190, 0, 0);
 }
 
-#BuyButton {
+.BuyButton {
   background-color: green;
   width: 50%;
 }
